@@ -38,8 +38,23 @@ register_form.addEventListener("submit", function(event) {
     }
 });
         
-
-
-
-
-
+login_form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const username = document.getElementById("login_username").value;
+    const password = document.getElementById("login_password").value;
+    if (username === "admin@quiz.com" && password === "admin123") {
+        localStorage.setItem("current_user", username);
+        window.location.href = "dashboard.html";
+        return;
+    }
+    let users = localStorage.getItem("users");
+    users = users ? JSON.parse(users) : {};
+    if (!users[username]) {
+        alert("User does not exist. Please register first.");}
+    else if (users[username].password !== password) {
+        alert("Incorrect password. Please try again.");}
+    else {
+        localStorage.setItem("current_user", username);
+        window.location.href = "home.html";
+    }
+});
