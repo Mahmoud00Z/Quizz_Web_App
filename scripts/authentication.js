@@ -42,7 +42,7 @@ login_form.addEventListener("submit", function(event) {
     event.preventDefault();
     const username = document.getElementById("login_username").value;
     const password = document.getElementById("login_password").value;
-    if (username === "admin@quiz.com" && password === "admin123") {
+    if (username === "admin@quiz" && password === "admin123") {
         localStorage.setItem("current_user", username);
         window.location.href = "dashboard.html";
         return;

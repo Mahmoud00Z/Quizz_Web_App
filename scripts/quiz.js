@@ -64,4 +64,4 @@ quiz_form.addEventListener("submit", function (e) {
       submit_btn.disabled = true;
     });
   });
-  
+   
